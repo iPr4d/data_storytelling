@@ -1,35 +1,35 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "dee2fc33f8e5018ecf75806b0783fffd",
+    "revision": "7e2e2d18780b32d543da7b75b89fbeb4",
     "url": "/data_storytelling/index.html"
   },
   {
-    "revision": "048e8d1a8db7654ded3e",
+    "revision": "a175bb192ab45fd6df0e",
     "url": "/data_storytelling/static/css/2.db9d2a47.chunk.css"
   },
   {
-    "revision": "1fdbc3159428bdf23be2",
-    "url": "/data_storytelling/static/css/main.d1b05096.chunk.css"
+    "revision": "f45d2e1b55413ebfe890",
+    "url": "/data_storytelling/static/css/main.d1e0ceb0.chunk.css"
   },
   {
-    "revision": "048e8d1a8db7654ded3e",
-    "url": "/data_storytelling/static/js/2.868ce9e3.chunk.js"
+    "revision": "a175bb192ab45fd6df0e",
+    "url": "/data_storytelling/static/js/2.4e848f46.chunk.js"
   },
   {
     "revision": "9adccee2fe9e6e7815c0f1049414ca41",
-    "url": "/data_storytelling/static/js/2.868ce9e3.chunk.js.LICENSE.txt"
+    "url": "/data_storytelling/static/js/2.4e848f46.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "1fdbc3159428bdf23be2",
-    "url": "/data_storytelling/static/js/main.f21d99e9.chunk.js"
+    "revision": "f45d2e1b55413ebfe890",
+    "url": "/data_storytelling/static/js/main.61bb395d.chunk.js"
   },
   {
     "revision": "cec27f9cdc9fea5a07fb",
     "url": "/data_storytelling/static/js/runtime-main.5295eb37.js"
   },
   {
-    "revision": "29a55e69b82ca3487484b4b31285a5c9",
-    "url": "/data_storytelling/static/media/carte_france.29a55e69.jpg"
+    "revision": "b6cda18d5e539d2b1a744c5bda011d74",
+    "url": "/data_storytelling/static/media/carte_france.b6cda18d.jpg"
   },
   {
     "revision": "5cb7edfceb233100075dc9a1e12e8da3",

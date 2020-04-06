@@ -1,28 +1,28 @@
 {
   "files": {
-    "main.css": "/data_storytelling/static/css/main.d1b05096.chunk.css",
-    "main.js": "/data_storytelling/static/js/main.f21d99e9.chunk.js",
-    "main.js.map": "/data_storytelling/static/js/main.f21d99e9.chunk.js.map",
+    "main.css": "/data_storytelling/static/css/main.d1e0ceb0.chunk.css",
+    "main.js": "/data_storytelling/static/js/main.61bb395d.chunk.js",
+    "main.js.map": "/data_storytelling/static/js/main.61bb395d.chunk.js.map",
     "runtime-main.js": "/data_storytelling/static/js/runtime-main.5295eb37.js",
     "runtime-main.js.map": "/data_storytelling/static/js/runtime-main.5295eb37.js.map",
     "static/css/2.db9d2a47.chunk.css": "/data_storytelling/static/css/2.db9d2a47.chunk.css",
-    "static/js/2.868ce9e3.chunk.js": "/data_storytelling/static/js/2.868ce9e3.chunk.js",
-    "static/js/2.868ce9e3.chunk.js.map": "/data_storytelling/static/js/2.868ce9e3.chunk.js.map",
+    "static/js/2.4e848f46.chunk.js": "/data_storytelling/static/js/2.4e848f46.chunk.js",
+    "static/js/2.4e848f46.chunk.js.map": "/data_storytelling/static/js/2.4e848f46.chunk.js.map",
     "index.html": "/data_storytelling/index.html",
-    "precache-manifest.be85af75bc87e7f8ff62f9704b0a9e9c.js": "/data_storytelling/precache-manifest.be85af75bc87e7f8ff62f9704b0a9e9c.js",
+    "precache-manifest.41a8ddce48cfc4e6202a345a496df2c9.js": "/data_storytelling/precache-manifest.41a8ddce48cfc4e6202a345a496df2c9.js",
     "service-worker.js": "/data_storytelling/service-worker.js",
     "static/css/2.db9d2a47.chunk.css.map": "/data_storytelling/static/css/2.db9d2a47.chunk.css.map",
-    "static/css/main.d1b05096.chunk.css.map": "/data_storytelling/static/css/main.d1b05096.chunk.css.map",
-    "static/js/2.868ce9e3.chunk.js.LICENSE.txt": "/data_storytelling/static/js/2.868ce9e3.chunk.js.LICENSE.txt",
-    "static/media/carte_france.jpg": "/data_storytelling/static/media/carte_france.29a55e69.jpg",
+    "static/css/main.d1e0ceb0.chunk.css.map": "/data_storytelling/static/css/main.d1e0ceb0.chunk.css.map",
+    "static/js/2.4e848f46.chunk.js.LICENSE.txt": "/data_storytelling/static/js/2.4e848f46.chunk.js.LICENSE.txt",
+    "static/media/carte_france.jpg": "/data_storytelling/static/media/carte_france.b6cda18d.jpg",
     "static/media/index.css": "/data_storytelling/static/media/roboto-latin-900italic.ebf6d164.woff2",
     "static/media/video.mp4": "/data_storytelling/static/media/video.ace23b6b.mp4"
   },
   "entrypoints": [
     "static/js/runtime-main.5295eb37.js",
     "static/css/2.db9d2a47.chunk.css",
-    "static/js/2.868ce9e3.chunk.js",
-    "static/css/main.d1b05096.chunk.css",
-    "static/js/main.f21d99e9.chunk.js"
+    "static/js/2.4e848f46.chunk.js",
+    "static/css/main.d1e0ceb0.chunk.css",
+    "static/js/main.61bb395d.chunk.js"
   ]
 }
