@@ -1,19 +1,19 @@
 {
   "files": {
     "main.css": "/data_storytelling/static/css/main.d1e0ceb0.chunk.css",
-    "main.js": "/data_storytelling/static/js/main.a06c050d.chunk.js",
-    "main.js.map": "/data_storytelling/static/js/main.a06c050d.chunk.js.map",
+    "main.js": "/data_storytelling/static/js/main.91f497bd.chunk.js",
+    "main.js.map": "/data_storytelling/static/js/main.91f497bd.chunk.js.map",
     "runtime-main.js": "/data_storytelling/static/js/runtime-main.5295eb37.js",
     "runtime-main.js.map": "/data_storytelling/static/js/runtime-main.5295eb37.js.map",
     "static/css/2.db9d2a47.chunk.css": "/data_storytelling/static/css/2.db9d2a47.chunk.css",
-    "static/js/2.a7f15400.chunk.js": "/data_storytelling/static/js/2.a7f15400.chunk.js",
-    "static/js/2.a7f15400.chunk.js.map": "/data_storytelling/static/js/2.a7f15400.chunk.js.map",
+    "static/js/2.8b9a7845.chunk.js": "/data_storytelling/static/js/2.8b9a7845.chunk.js",
+    "static/js/2.8b9a7845.chunk.js.map": "/data_storytelling/static/js/2.8b9a7845.chunk.js.map",
     "index.html": "/data_storytelling/index.html",
-    "precache-manifest.8e4fb0244d5be34dda55fe93f29c95a3.js": "/data_storytelling/precache-manifest.8e4fb0244d5be34dda55fe93f29c95a3.js",
+    "precache-manifest.55421dc5971d23f1f3d0e37b58782096.js": "/data_storytelling/precache-manifest.55421dc5971d23f1f3d0e37b58782096.js",
     "service-worker.js": "/data_storytelling/service-worker.js",
     "static/css/2.db9d2a47.chunk.css.map": "/data_storytelling/static/css/2.db9d2a47.chunk.css.map",
     "static/css/main.d1e0ceb0.chunk.css.map": "/data_storytelling/static/css/main.d1e0ceb0.chunk.css.map",
-    "static/js/2.a7f15400.chunk.js.LICENSE.txt": "/data_storytelling/static/js/2.a7f15400.chunk.js.LICENSE.txt",
+    "static/js/2.8b9a7845.chunk.js.LICENSE.txt": "/data_storytelling/static/js/2.8b9a7845.chunk.js.LICENSE.txt",
     "static/media/carte_france.jpg": "/data_storytelling/static/media/carte_france.b6cda18d.jpg",
     "static/media/index.css": "/data_storytelling/static/media/roboto-latin-900italic.ebf6d164.woff2",
     "static/media/video.mp4": "/data_storytelling/static/media/video.ace23b6b.mp4"
@@ -21,8 +21,8 @@
   "entrypoints": [
     "static/js/runtime-main.5295eb37.js",
     "static/css/2.db9d2a47.chunk.css",
-    "static/js/2.a7f15400.chunk.js",
+    "static/js/2.8b9a7845.chunk.js",
     "static/css/main.d1e0ceb0.chunk.css",
-    "static/js/main.a06c050d.chunk.js"
+    "static/js/main.91f497bd.chunk.js"
   ]
 }
