@@ -17,7 +17,7 @@ class MapFrance extends React.Component {
     render() {
   return (
 
-    <Card elevation={8} style={{ position: 'absolute', top: -200, left: -170, transform: 'scale(0.6)', width: 979, height: 1065}}>
+    <Card elevation={8} style={{  transform: 'scale(0.6)', width: 979, height: 1065, position: 'absolute', transformOrigin: "0 0", marginLeft: 20}}>
     <CardMedia>
     <img
     src={mapFrance}

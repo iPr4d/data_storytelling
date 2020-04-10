@@ -11,6 +11,7 @@ import Drawer from '@material-ui/core/Drawer';
 import List from '@material-ui/core/List';
 import Divider from '@material-ui/core/Divider';
 import ListItem from '@material-ui/core/ListItem';
+import Typography from '@material-ui/core/Typography';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import LocalBarIcon from '@material-ui/icons/LocalBar';
@@ -80,6 +81,7 @@ function App() {
   const [state, setState] = React.useState({
     right: false,
   });
+  
 
   const toggleDrawer = (side, open) => event => {
     if (event && event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
@@ -100,6 +102,8 @@ function App() {
     </div>
   );
 
+  
+
   const handleDrawerOpen = () => {
     setState(true);
   };
@@ -113,64 +117,15 @@ function App() {
 
       <Router>
             <div>
-                <Route exact path="/" component={HomeComponent} />
-                <Route exact path="/map" component={MapComponent} />
-                <Route exact path="/conso" component={ConsoComponent} />
-                <Route exact path="/prod" component={ProdComponent} />
+                <Route exact path="/data_storytelling" component={HomeComponent} />
+                <Route exact path="/data_storytelling/map" component={MapComponent} />
+                <Route exact path="/data_storytelling/conso" component={ConsoComponent} />
+                <Route exact path="/data_storytelling/prod" component={ProdComponent} />
             </div>
 
       {!state.right && <div><IconButton style={{position: 'absolute', top: 5, right: 5 }}>
         <MenuIcon onClick={toggleDrawer('right', true)} style={{color: 'rgb(255,255,255)', width: 30, height: 30}}/>
       </IconButton></div>}
-
-      <Drawer
-        variant="permanent"
-        anchor='right'
-        className={clsx(classes.drawer, {
-          [classes.drawerOpen]: state.right,
-          [classes.drawerClose]: !state.right,
-        })}
-        classes={{
-          paper: clsx({
-            [classes.drawerOpen]: state.right,
-            [classes.drawerClose]: !state.right,
-          }),
-        }}
-      >
-        <div className={classes.toolbar}>
-          <IconButton onClick={state.right ? toggleDrawer('right', false) : toggleDrawer('right', true)}>
-            {state.right ? <ChevronRightIcon /> : <ChevronLeftIcon />}
-          </IconButton>
-        </div>
-
-
-        <List>
-      <Divider variant='middle'/>
-        {['Accueil', 'Carte de France', 'Consommation', 'Production'].map((text, index) => (
-          <div>
-          <ListItem 
-            button 
-            onClick={toggleDrawer('right', false)}
-            key={text} 
-            component={Link}
-            to={index === 0 ? "/" : (index === 1 ? "/map" : (index === 2 ? "/conso" : "/prod"))}>
-            <ListItemIcon>
-            {index === 0 && <HomeIcon/>}
-            {index === 1 && <MapIcon /> }
-            {index === 2 && <LocalBarIcon/>}
-            {index === 3 && <NatureIcon/>}
-            </ListItemIcon>
-            <ListItemText primary={text} >
-            </ListItemText>
-          </ListItem>
-          <Divider variant='middle'/>
-          </div>
-        ))}
-      </List>
-        
-
-      </Drawer>
-
 
         {/* {sideList('right')} */}
 
