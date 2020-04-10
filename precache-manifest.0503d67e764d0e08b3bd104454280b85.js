@@ -1,27 +1,27 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "3ce86d489098793b77cd31fc8573f356",
+    "revision": "b5381a1718dac42f63118040a43d41b8",
     "url": "/data_storytelling/index.html"
   },
   {
-    "revision": "21c619ef21506490cd63",
+    "revision": "f1c6c5af4752de567c43",
     "url": "/data_storytelling/static/css/2.db9d2a47.chunk.css"
   },
   {
-    "revision": "51cf8183b891ff53b55c",
-    "url": "/data_storytelling/static/css/main.2e91e306.chunk.css"
+    "revision": "7dba9d61e1827c75dc8f",
+    "url": "/data_storytelling/static/css/main.0f0c1252.chunk.css"
   },
   {
-    "revision": "21c619ef21506490cd63",
-    "url": "/data_storytelling/static/js/2.93b6109e.chunk.js"
+    "revision": "f1c6c5af4752de567c43",
+    "url": "/data_storytelling/static/js/2.3af991ee.chunk.js"
   },
   {
     "revision": "9adccee2fe9e6e7815c0f1049414ca41",
-    "url": "/data_storytelling/static/js/2.93b6109e.chunk.js.LICENSE.txt"
+    "url": "/data_storytelling/static/js/2.3af991ee.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "51cf8183b891ff53b55c",
-    "url": "/data_storytelling/static/js/main.c88c0498.chunk.js"
+    "revision": "7dba9d61e1827c75dc8f",
+    "url": "/data_storytelling/static/js/main.cdc8b58a.chunk.js"
   },
   {
     "revision": "cec27f9cdc9fea5a07fb",
@@ -30,6 +30,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "b6cda18d5e539d2b1a744c5bda011d74",
     "url": "/data_storytelling/static/media/carte_france.b6cda18d.jpg"
+  },
+  {
+    "revision": "d8ec8f8f13bf80cf6e0134bf4358b3e2",
+    "url": "/data_storytelling/static/media/grapes.d8ec8f8f.svg"
   },
   {
     "revision": "5cb7edfceb233100075dc9a1e12e8da3",
@@ -126,6 +130,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "ebf6d1640ccddb99fb49f73c052c55a8",
     "url": "/data_storytelling/static/media/roboto-latin-900italic.ebf6d164.woff2"
+  },
+  {
+    "revision": "f237c4e7c5729ef110abb41c2c2615fd",
+    "url": "/data_storytelling/static/media/test.f237c4e7.svg"
   },
   {
     "revision": "ace23b6b54bd07588d1c849cc62811e5",
