@@ -1,6 +1,6 @@
 {
   "short_name": "Le vin en France",
-  "name": "Create React App Sample",
+  "name": "Le vin en France",
   "icons": [
     {
       "src": "favicon.ico",
@@ -8,7 +8,7 @@
       "type": "image/x-icon"
     }
   ],
-  "start_url": "https://ipr4d.github.io/data_storytelling/",
+  "start_url": "ipr4d.github.io/data_storytelling/",
   "display": "standalone",
   "theme_color": "#000000",
   "background_color": "#ffffff"
