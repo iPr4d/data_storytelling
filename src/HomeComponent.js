@@ -115,7 +115,7 @@ function HomeComponent() {
   const classes = useStyles();
   const [state, setState] = React.useState({
     open: true,
-    dark: true
+    dark: false
   });
 
   const scrollToRef = (ref) => window.scrollTo(0, ref.current.offsetTop)  
@@ -216,7 +216,7 @@ function HomeComponent() {
       <div style={{position:'absolute', bottom:0, width: '100%'}}>
         <List>
         <Divider variant='middle' style={{background : state.dark && secondary.buttons}}/>
-        {['MODE NUIT'].map((text, index) => (
+        {[state.dark ? 'MODE JOUR' : 'MODE NUIT'].map((text, index) => (
           <div>
           <ListItem 
             button 
