@@ -13,6 +13,33 @@ const styles = () => ({
 
 });
 
+const theme = {
+    axis: {
+      fontSize: "14px",
+      tickColor: "#eee",
+      ticks: {
+        line: {
+          stroke: "#555555"
+        },
+        text: {
+          fill: "#ffffff"
+        }
+      },
+      legend: {
+        text: {
+          fill: "#aaaaaa"
+        }
+      }
+    },
+    grid: {
+      line: {
+        stroke: "#555555"
+      }
+    }
+  };
+
+const secondary = { main: "#202020", appbar: '#333333', buttons: '#FFFFFF'};
+
 class DatavizMultiDep extends React.Component {
   constructor() {
     super();
@@ -69,13 +96,14 @@ render() {
 
 
 
-            <div style={{ width: '50em', height: '25em'}}>
+            <div style={{ width: '50em', height: '25em' }}>
             <ResponsiveLine
         data={data_selected}
         margin={{ top: 50, right: 110, bottom: 50, left: 60 }}
         yScale={{ type: 'linear', min: '0', max: 'auto', stacked: false, reverse: false }}
         axisTop={null}
         axisRight={null}
+        theme={this.props.dark && theme}
         enableSlices="x"
         axisBottom={{
             orient: 'bottom',
@@ -112,6 +140,7 @@ render() {
                 translateY: 0,
                 itemsSpacing: 0,
                 itemDirection: 'left-to-right',
+                itemTextColor: this.props.dark && secondary.buttons,
                 itemWidth: 80,
                 itemHeight: 20,
                 itemOpacity: 0.75,

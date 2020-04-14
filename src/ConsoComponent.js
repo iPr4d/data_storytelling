@@ -11,8 +11,35 @@ const useStyles = makeStyles({
 
 });
 
+const secondary = { main: "#202020", appbar: '#333333', buttons: '#FFFFFF'};
 
-function ConsoComponent() {
+const theme = {
+    axis: {
+      fontSize: "14px",
+      tickColor: "#eee",
+      ticks: {
+        line: {
+          stroke: "#555555"
+        },
+        text: {
+          fill: "#ffffff"
+        }
+      },
+      legend: {
+        text: {
+          fill: "#aaaaaa"
+        }
+      }
+    },
+    grid: {
+      line: {
+        stroke: "#555555"
+      }
+    }
+  };
+
+
+function ConsoComponent(props) {
   const classes = useStyles();
   const [state, setState] = React.useState({
   });
@@ -21,24 +48,20 @@ function ConsoComponent() {
 
   return (
     <div className="Conso"  style={{textAlign : 'center'}}>
-        <div style={{ height: '20em', width: '50em' }}>
+        <div style={{ height: '20em', width: '65em' }}>
 
 
 <ResponsiveStream
 data={ConsoData}
-keys={['Alcool fort',
-'Champagne, cidre et apéritif',
-'Vins de qualité supérieure',
-'Vins de consommation courante',
-'Bière',
-'Boissons non alcoolisées']}
+keys={['Vins de consommation courante','Vins de qualité supérieure','Champagne, cidre et apéritif','Bière','Alcool fort','Boissons non alcoolisées']}
 margin={{ top: 25, right: 200, bottom: 50, left: 60 }}
 axisTop={null}
+theme={props.dark && theme}
 axisRight={null}
 axisBottom={{orient: 'bottom', tickSize:10, tickPadding: 5, tickRotation: 0, tickValues: [1960], legend: 'Année', legendOffset: 20 }}
 axisLeft={{ orient: 'left', tickSize: 5, tickPadding: 5, tickRotation: 0, legend: '', legendOffset: -40 }}
 offsetType="none"
-order="ascending"
+order="none"
 colors={{ scheme: 'nivo' }}
 fillOpacity={0.85}
 borderColor={{ theme: 'background' }}
@@ -87,7 +110,7 @@ legends={[
 {
     anchor: 'bottom-right',
     direction: 'column',
-    translateX: 100,
+    translateX: 85,
     itemWidth: 80,
     itemHeight: 20,
     itemTextColor: '#999999',

@@ -14,6 +14,34 @@ const styles = () => ({
 
 });
 
+const secondary = { main: "#202020", appbar: '#333333', buttons: '#FFFFFF'};
+
+const theme = {
+    axis: {
+      fontSize: "14px",
+      tickColor: "#eee",
+      ticks: {
+        line: {
+          stroke: "#555555"
+        },
+        text: {
+          fill: "#ffffff"
+        }
+      },
+      legend: {
+        text: {
+          fill: "#aaaaaa"
+        }
+      }
+    },
+    grid: {
+      line: {
+        stroke: "#555555"
+      }
+    }
+  };
+
+
 class Stream extends React.Component {
   constructor() {
     super();
@@ -27,8 +55,8 @@ render() {
   const { classes } = this.props;
   return (
       <div>
-          <Card style={{ height: '21em', width: '31em', marginLeft: 80}}>
-              <Typography style={{fontFamily: 'Montserrat', fontSize: 10, marginTop: 15}}>
+          <Card style={{ height: '21em', width: '31em', marginLeft: 80, backgroundColor: this.props.dark && secondary.appbar}}>
+              <Typography style={{fontFamily: 'Montserrat', fontSize: 10, marginTop: 15, color: this.props.dark && secondary.buttons}}>
                   Production par type de vin de 2012 à 2019 (en centaines d'hectolitres)
                 </Typography>
           
@@ -40,6 +68,7 @@ render() {
         keys={[ 'Rosé', 'Rouge', 'Blanc' ]}
         margin={{ top: 25, right: 80, bottom: 50, left: 60 }}
         axisTop={null}
+        theme={this.props.dark && theme}
         axisRight={null}
         axisBottom={{orient: 'bottom', tickSize:10, tickPadding: 5, tickRotation: 0, tickValues: [2012], legend: 'Année', legendOffset: 20 }}
         axisLeft={{ orient: 'left', tickSize: 5, tickPadding: 5, tickRotation: 0, legend: '', legendOffset: -40 }}

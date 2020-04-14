@@ -13,6 +13,33 @@ const styles = () => ({
 
 });
 
+const secondary = { main: "#202020", appbar: '#333333', buttons: '#FFFFFF'};
+
+const theme = {
+  axis: {
+    fontSize: "14px",
+    tickColor: "#eee",
+    ticks: {
+      line: {
+        stroke: "#555555"
+      },
+      text: {
+        fill: "#ffffff"
+      }
+    },
+    legend: {
+      text: {
+        fill: "#aaaaaa"
+      }
+    }
+  },
+  grid: {
+    line: {
+      stroke: "#555555"
+    }
+  }
+};
+
 class DatavizDep extends React.Component {
   constructor() {
     super();
@@ -82,8 +109,8 @@ render() {
             <br/>
 
             
-            <Card style={{ height: '21em', width: '31em', marginLeft: 80}}>
-              <Typography style={{fontFamily: 'Montserrat', fontSize: 10, marginTop: 15}}>
+            <Card style={{ height: '21em', width: '31em', marginLeft: 80, backgroundColor: this.props.dark && secondary.appbar}}>
+              <Typography style={{fontFamily: 'Montserrat', fontSize: 10, marginTop: 15, color: this.props.dark && secondary.buttons }}>
                   Comparaison de la production totale à la moyenne sur tous les départements
                 </Typography>
           
@@ -95,6 +122,7 @@ render() {
         yScale={{ type: 'linear', min: '0', max: 'auto', stacked: false, reverse: false }}
         axisTop={null}
         axisRight={null}
+        theme={this.props.dark && theme}
         enableSlices="x"
         axisBottom={{
             orient: 'bottom',
@@ -130,6 +158,7 @@ render() {
                 translateY: 0,
                 itemsSpacing: 0,
                 itemDirection: 'left-to-right',
+                itemTextColor: this.props.dark && secondary.buttons,
                 itemWidth: 80,
                 itemHeight: 20,
                 itemOpacity: 0.75,

@@ -14,6 +14,8 @@ import { departements1 } from './departements'
 import { List, ListItem } from '@material-ui/core';
 
 
+const secondary = { main: "#202020", appbar: '#333333', buttons: '#FFFFFF'};
+
 const styles = (theme) => ({
   grow: {
     flexGrow: 1,
@@ -50,6 +52,18 @@ const styles = (theme) => ({
     color: 'inherit',
   },
   inputInput: {
+    padding: theme.spacing(1, 1, 1, 3),
+    transition: theme.transitions.create('width'),
+    width: '100%',
+    [theme.breakpoints.up('md')]: {
+      width: 200,
+    },
+  },
+  inputRootDark: {
+    color: 'inherit',
+  },
+  inputInputDark: {
+    color: secondary.buttons,
     padding: theme.spacing(1, 1, 1, 3),
     transition: theme.transitions.create('width'),
     width: '100%',
@@ -98,10 +112,11 @@ const styles = (theme) => ({
             <Popper open={this.state.input.length > 1} anchorEl={this.state.anchorEl} placement={'bottom'} transition>
                     {({ TransitionProps }) => (
                     <Fade {...TransitionProps} timeout={350}>
-                        <Paper>
+                        <Paper style={{background : this.props.dark && secondary.appbar}}>
                             <List>
                         {this.getSuggestion(this.state.input).map( ({key,value}) => { return (
                             <ListItem 
+                                style={{color : this.props.dark && secondary.buttons}}  
                                 button 
                                 onClick={()=>{
                                 this.setState({ input: ""})
@@ -131,15 +146,15 @@ const styles = (theme) => ({
         <div style={{display: 'flex'}}>
           <div className={classes.search}>
             <div className={classes.searchIcon}>
-              <SearchIcon />
+              <SearchIcon style={{color: this.props.dark && secondary.buttons}}/>
             </div>
             <InputBase
               placeholder="Rechercher"
               value={this.state.input}
               onChange={(e)=>this.handleChange(e)}
               classes={{
-                root: classes.inputRoot,
-                input: classes.inputInput,
+                root: this.props.dark ? classes.inputRootDark : classes.inputRoot,
+                input: this.props.dark ? classes.inputInputDark : classes.inputInput,
               }}
               inputProps={{ 'aria-label': 'Search' }}
             />

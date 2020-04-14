@@ -3,29 +3,24 @@ import './App.css';
 
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import clsx from 'clsx';
+import ReactGA from "react-ga";
 
 import IconButton from '@material-ui/core/IconButton'
 import MenuIcon from '@material-ui/icons/Menu'
 import { makeStyles, useTheme } from '@material-ui/core/styles';
-import Drawer from '@material-ui/core/Drawer';
-import List from '@material-ui/core/List';
-import Divider from '@material-ui/core/Divider';
-import ListItem from '@material-ui/core/ListItem';
-import Typography from '@material-ui/core/Typography';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
-import ListItemText from '@material-ui/core/ListItemText';
-import LocalBarIcon from '@material-ui/icons/LocalBar';
-import MapIcon from '@material-ui/icons/Map';
-import NatureIcon from '@material-ui/icons/Nature';
-import HomeIcon from '@material-ui/icons/Home';
-import ChevronRightIcon from '@material-ui/icons/ChevronRight'
-import ChevronLeftIcon from '@material-ui/icons/ChevronLeft'
-
+import purple from '@material-ui/core/colors/purple';
 
 import HomeComponent from './HomeComponent'
-import MapComponent from './MapComponent'
-import ConsoComponent from './ConsoComponent'
-import ProdComponent from './ProdComponent'
+
+ReactGA.initialize("UA-163319347-1");
+
+
+const logPageView = () => {
+  const page = window.location.pathname;
+  ReactGA.set({ page });
+  ReactGA.pageview(page);
+  return null;
+};
 
 const drawerWidth = 240;
 
@@ -81,7 +76,6 @@ function App() {
   const [state, setState] = React.useState({
     right: false,
   });
-  
 
   const toggleDrawer = (side, open) => event => {
     if (event && event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
@@ -91,43 +85,20 @@ function App() {
     setState({ ...state, [side]: open });
   };
 
-  const sideList = side => (
-    <div
-      className={classes.list}
-      role="presentation"
-      onClick={toggleDrawer(side, false)}
-      onKeyDown={toggleDrawer(side, false)}
-    >
-      
-    </div>
-  );
-
-  
-
-  const handleDrawerOpen = () => {
-    setState(true);
-  };
-
-  const handleDrawerClose = () => {
-    setState(false);
-  };
 
   return (
     <div className="App">
 
       <Router>
             <div>
+                <Route path="/data_storytelling" component={logPageView} />
                 <Route exact path="/data_storytelling" component={HomeComponent} />
-                <Route exact path="/data_storytelling/map" component={MapComponent} />
-                <Route exact path="/data_storytelling/conso" component={ConsoComponent} />
-                <Route exact path="/data_storytelling/prod" component={ProdComponent} />
             </div>
 
       {!state.right && <div><IconButton style={{position: 'absolute', top: 5, right: 5 }}>
         <MenuIcon onClick={toggleDrawer('right', true)} style={{color: 'rgb(255,255,255)', width: 30, height: 30}}/>
       </IconButton></div>}
 
-        {/* {sideList('right')} */}
 
       </Router>
 

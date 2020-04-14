@@ -1,23 +1,68 @@
 import React from 'react';
 
 import { withStyles } from "@material-ui/core/styles";
-import prodData from './data.json'
+import FormControl from '@material-ui/core/FormControl'
+import FormControlLabel from '@material-ui/core/FormControlLabel'
+import FormGroup from '@material-ui/core/FormGroup'
+import Checkbox from '@material-ui/core/Checkbox'
+
+import prodData from './data4.json'
 import { ResponsiveBar } from '@nivo/bar'
 import { Typography } from '@material-ui/core';
 import { departements } from './departements'
 
-const styles = () => ({
+const styles = (theme) => ({
   root: {
     textAlign: "center"
   },
+  root2: {
+    display: 'flex',
+  },
+  formControl: {
+    margin: theme.spacing(3),
+  },
 
 });
+
+const colors = { 'Rouge': 'hsla(349, 27%, 48%, 0.7)', 'Blanc': 'hsla(53, 86%, 78%, 0.7)', 'Rosé': 'hsla(21, 98%, 82%, 0.7)' }
+const getColor = bar => colors[bar.id]
+
+const secondary = { main: "#202020", appbar: '#333333', buttons: '#FFFFFF'};
+
+const theme = {
+  background: secondary.main,
+  axis: {
+    fontSize: "14px",
+    tickColor: "#eee",
+    ticks: {
+      line: {
+        stroke: "#555555"
+      },
+      text: {
+        fill: "#ffffff"
+      }
+    },
+    legend: {
+      text: {
+        fill: "#aaaaaa"
+      }
+    }
+  },
+  grid: {
+    line: {
+      stroke: "#555555"
+    }
+  }
+};
 
 
 class DatavizMultiDep extends React.Component {
   constructor() {
     super();
     this.state = {
+        rouge: true,
+        blanc: true,
+        rose: true
     };
   }
 
@@ -45,36 +90,80 @@ class DatavizMultiDep extends React.Component {
       return array
   }
 
-  processDataToDisplay = (dataArray) => {
-      let newData = [];
-        dataArray.map(item => {
-            
-            item['RougeColor'] = 'hsl(349, 49%, 24%)'
-            item['RoséColor'] = 'hsl(21, 98%, 82%)'
-            item['BlancColor'] = 'hsl(53, 86%, 78%)'
-            newData.push(item)
-        } )
-      return newData
-      
-  }
+
+  handleChange = (event) => {
+      if (event.target.name == 'rouge') {
+
+        if (!(this.state.rouge && !this.state.blanc && !this.state.rose)) {
+            this.setState({[event.target.name]: event.target.checked })
+        }
+      }
+
+      if (event.target.name == 'rose') {
+
+        if (!(!this.state.rouge && !this.state.blanc && this.state.rose)) {
+          this.setState({[event.target.name]: event.target.checked })
+        }
+    }
+
+    if (event.target.name == 'blanc') {
+
+        if (!(!this.state.rouge && this.state.blanc && !this.state.rose)) {
+            this.setState({[event.target.name]: event.target.checked })
+        }
+      }
+  };
 
 
 render() {
   const { classes } = this.props;
-  const data = this.processDataToDisplay(this.test(prodData['data'][0]))
+  const data = this.test(prodData['data'][0])
+  let keys = []
+  this.state.rouge && keys.push('Rouge')
+  this.state.blanc && keys.push('Blanc')
+  this.state.rose && keys.push('Rosé')
+  
 
   return (
     <div className="Prod" style={{textAlign: 'center', marginLeft: 275}}>
 
             <br/>
-            {console.log(data)}
+            <div style={{display: 'flex', justifyContent: 'center', marginLeft: -275}}>
+
+
+          <FormControlLabel
+          style={{color : this.props.dark && secondary.buttons }}
+            control={<Checkbox checked={this.state.rouge} onChange={this.handleChange} name="rouge" />}
+            label="Rouge"
+            labelPlacement='bottom'
+          />
+          <FormControlLabel
+            style={{color : this.props.dark && secondary.buttons }}
+            control={<Checkbox checked={this.state.blanc} onChange={this.handleChange} name="blanc" />}
+            label="Blanc"
+            labelPlacement='bottom'
+          />
+          <FormControlLabel
+          style={{color : this.props.dark && secondary.buttons }}
+            control={<Checkbox checked={this.state.rose} onChange={this.handleChange} name="rose" />}
+            label="Rosé"
+            labelPlacement='bottom'
+          />
+
+
+      </div>
 
             <div style={{ width: '50em', height: '25em'}}>
 
+                {console.log(data)}
+
             <ResponsiveBar
         data={data}
-        keys={[ 'Rosé', 'Rouge', 'Blanc']}
+        keys={keys}
+        enableLabel={false}
+        colors={getColor}
         indexBy="Année"
+        theme={this.props.dark && theme}
         margin={{ top: 50, right: 130, bottom: 50, left: 60 }}
         padding={0.3}
         defs={[
@@ -138,6 +227,7 @@ render() {
                 dataFrom: 'keys',
                 anchor: 'bottom-right',
                 direction: 'column',
+                itemTextColor: this.props.dark && secondary.buttons,
                 justify: false,
                 translateX: 120,
                 translateY: 0,

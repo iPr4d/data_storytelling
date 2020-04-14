@@ -5,6 +5,7 @@ import Card from '@material-ui/core/Card'
 import CardMedia from '@material-ui/core/CardMedia'
 
 import mapFrance from './carte_france.jpg'
+import mapFrance2 from './image2.jpg'
 
 
 
@@ -20,7 +21,7 @@ class MapFrance extends React.Component {
     <Card elevation={8} style={{  transform: 'scale(0.6)', width: 979, height: 1065, position: 'absolute', transformOrigin: "0 0", marginLeft: 20}}>
     <CardMedia>
     <img
-    src={mapFrance}
+    src={this.props.dark ? mapFrance2 : mapFrance}
     width={979}
     height={1065}
   />

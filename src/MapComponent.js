@@ -13,7 +13,16 @@ import PeopleIcon from '@material-ui/icons/People'
 import OpacityIcon from '@material-ui/icons/Opacity'
 
 import MapFrance from './mapFrance';
+import GrapeIcon from './grapes.svg'
+
+import { ReactComponent as User } from './test.svg'
+
+
 import { Divider } from '@material-ui/core';
+
+const View = (color) => <User fill={color} style={{ width: 23, height: 23,}}/>;
+
+const secondary = { main: "#202020", appbar: '#333333', buttons: '#FFFFFF'};
 
 let ChampagneDescr = "Emblème liquide du luxe et de la fête, le Champagne est un vin effervescent produit dans la région éponyme, dans le nord-est de la France. Les vins de Champagne – qui ne pétillaient pas encore – furent d'ailleurs longtemps qualifiés de « vins de France », c'est-à-dire d'Île-de-France, toute proche. Quelques-unes de ces parcelles se trouvent toujours dans la région capitale, en Seine-et-Marne."
 let CognacDesc = "Le cognac,  eau-de-vie de vin, est produit dans une région délimitée centrée autour de Cognac, commune de Charente. Il est produit à partir de vin de chaudière (vin peu alcoolisé, acide et trouble)  qu'une double distillation et un vieillissement en fût de chêne transformera en cognac."
@@ -47,7 +56,7 @@ let CorseDesc =
 class MapComponent extends React.Component {
   constructor() {
     super();
-    this.state = { selected: 'svg-champagne', hovered: null };
+    this.state = { selected: 'svg-la-vallee-de-la-loire', hovered: null };
   }
 
   handleHovered = region => {
@@ -69,6 +78,10 @@ class MapComponent extends React.Component {
         url: 'https://fr.wikipedia.org/wiki/Vignoble_de_Champagne', 
         desc: ChampagneDescr,
         soleil: '1 728',
+        cepages_dict: {'Pinot noir':	39,
+        'Meunier':	33,
+        'Chardonnay':	27,
+        'Autres':	2},
         pluie: '604',
         temp: '13,9',
         superficie: '33 504',
@@ -80,6 +93,19 @@ class MapComponent extends React.Component {
       return {
         label: 'Vallée de la Loire',
         url: 'http://fr.wikipedia.org/wiki/Vignoble_de_la_vall%C3%A9e_de_la_Loire',
+        cepages_dict : {'Melon': 17,
+        'Chenin': 13,
+        'Sauvignon': 11,
+        'Chardonnay': 3,
+        'Folle blanche B': 2,
+        'Grolleau gris G': 1,
+        'Cabernet franc': 24,
+        'Gamay': 7,
+        'Grolleau N': 3,
+        'Pinot noir': 2,
+        'Cabernet -Sauvignon': 1,
+        'Malbec (ou Cot)': 1,
+        'Autres': 15},
         desc: LoireDescr,
         soleil: '1 844',
         pluie: '684',
@@ -97,6 +123,13 @@ class MapComponent extends React.Component {
         desc: AlsaceDescr,
         soleil: '1 733',
         pluie: '581',
+        cepages_dict: {'Riesling':	22,
+        'Pinot gris':	15,
+        'Auxerrois B':	14,
+        'Sylvaner B':	8,
+        'Pinot blanc B':	7,
+        'Pinot noir':	10,
+        'Autres':	23},
         temp: '15',
         superficie: '15 884',
         nbr_prod: '5 680',
@@ -110,6 +143,11 @@ class MapComponent extends React.Component {
         url: 'http://fr.wikipedia.org/wiki/Vignoble_du_Jura', 
         desc: JuraDesc,
         soleil: '1 871',
+        cepages_dict: {'Poulsard':	21,
+        'Trousseau N':	4,
+        'Chardonnay':	50,
+        'Savagnin':	17,
+        'Autres':	9},
         pluie: '1 108',
         temp: '14,5',
         superficie: '2 414',
@@ -124,6 +162,14 @@ class MapComponent extends React.Component {
         url: 'http://fr.wikipedia.org/wiki/Vignoble_de_Savoie', 
         desc: SavoieDesc,
         soleil: '2 026',
+        cepages_dict: {'Gamay':	13,
+        'Mondeuse N':	5,
+        'Pinot noir':	3,
+        'Jacquière B':	24,
+        'Altesse':	5,
+        'Chardonnay':	3,
+        'Roussanne (ou Bergeron)':	3,
+        'Autres':	44},
         pluie: '971',
         temp: '13,5',
         superficie: '3 811',
@@ -138,6 +184,12 @@ class MapComponent extends React.Component {
         url: 'http://fr.wikipedia.org/wiki/Vignoble_de_Bourgogne', 
         desc: BourgogneDesc,
         soleil: '1 831',
+        cepages_dict: {'Pinot noir':	34,
+        'Gamay':	10,
+        'Chardonnay':	44,
+        'Aligoté B':	6,
+        'Sauvignon':	4,
+        'Autres':	1},
         pluie: '732',
         temp: '15,1',
         superficie: '29 286',
@@ -151,6 +203,9 @@ class MapComponent extends React.Component {
         label: 'Beaujolais et Lyonnais',
         url: 'http://fr.wikipedia.org/wiki/Vignoble_du_Beaujolais',
         desc: BeaujolaisDesc,
+        cepages_dict:{'Gamay':	90,
+        'Chardonnay':	3,
+        'Autres':	7},
         soleil: '1 924',
         pluie: '842',
         temp: '15,4',
@@ -169,6 +224,15 @@ class MapComponent extends React.Component {
         climat: 'Tempéré méditerranéen',
         pluie: '913',
         temp: '17,2',
+        cepages_dict: {'Grenache':	13,
+        'Syrah':	10,
+        'Carignan':	2,
+        'Cinsaut':	1,
+        'Muscat à petits grans blancs':	2,
+        'Viognier':	1,
+        'Marsanne B':	1,
+        'Clairette B':	1,
+        'Autres':	71},
         superficie: '130 876',
         nbr_prod: '11 390',
         prod_totale: '6 207 928',
@@ -182,6 +246,14 @@ class MapComponent extends React.Component {
         desc: ProvenceDesc,
         soleil: '2 899',
         pluie: '665',
+        cepages_dict: {'Grenache':	48,
+        'Syrah':	19,
+        'Carignan':	11,
+        'Cinsaut':	10,
+        'Mourvèdre':	5,
+        'Ugni blanc':	3,
+        'Vermentino':	2,
+        'Clairette B':	1},
         temp: '18,9',
         superficie: '40 219',
         nbr_prod: '6 140',
@@ -196,6 +268,23 @@ class MapComponent extends React.Component {
         desc: LanguedocDesc,
         soleil: '2 686',
         pluie: '699',
+        cepages_dict:{'Syrah':	18,
+        'Grenache':	16,
+        'Carignan':	15,
+        'Merlot':	13,
+        'Cabernet -Sauvignon':	8,
+        'Cinsaut':	5,
+        'Mourvèdre N':	2,
+        'Cabernet franc':	1,
+        'Alicante Henri Bouschet N':	1,
+        'Chardonnay':	6,
+        'Sauvignon':	4,
+        'Viognier':	2,
+        'Grenache blanc B':	1,
+        'Muscat à petits grans blancs':	1,
+        'Piquepoul blanc B':	1,
+        'Terret blanc B':	1,
+        'Autres':	3},
         temp: '17,9',
         superficie: '202 400',
         nbr_prod: '27 030',
@@ -208,6 +297,15 @@ class MapComponent extends React.Component {
         label: 'Roussillon',
         url: 'http://fr.wikipedia.org/wiki/Vignoble_du_Languedoc-Roussillon',
         desc: RoussillonDesc,
+        cepages_dict:{'Grenache':	25,
+        'Syrah':	18,
+        'Carignan':	14,
+        'Mourvèdre N':	4,
+        'Chardonnay':	12,
+        'Vermentino':	9,
+        'Viognier':	8,
+        'Sauvignon':	5,
+        'Grenache gris G':	4},
         soleil: '2 506',
         pluie: '572',
         temp: '18,7',
@@ -224,6 +322,15 @@ class MapComponent extends React.Component {
         desc: BordeauxDesc,
         soleil: '2 083',
         pluie: '923',
+        cepages_dict: {'Merlot':	56,
+        'Cabernet -Sauvignon':	20,
+        'Cabernet franc':	9,
+        'Villard noir N':	1,
+        'Malbec (ou Cot)':	1,
+        'Sémilion':	5,
+        'Sauvignon':	4,
+        'Muscadelle B':	1,
+        'Autres':	3},
         temp: '14,5',
         superficie: '117 182',
         nbr_prod: '9 820',
@@ -237,6 +344,10 @@ class MapComponent extends React.Component {
         soleil: 'Non connu',
         pluie: 'Non connu',
         temp: 'Non connu',
+        cepages_dict: {'Pinot noir':	39,
+        'Meunier':	33,
+        'Chardonnay':	27,
+        'Autres':	2},
         url: 'https://fr.wikipedia.org/wiki/Vignoble_charentais',
         desc: CognacDesc,
         superficie: 'Non connu',
@@ -253,6 +364,22 @@ class MapComponent extends React.Component {
         soleil: '1 984',
         pluie: '716',
         temp: '16,3',
+        cepages_dict: {'Merlot':	15,
+        'Malbec (ou Cot)':	7,
+        'Cabernet franc':	6,
+        'Cabernet -Sauvignon':	4,
+        'Tannat N':	3,
+        'Fer servadou':	2,
+        'Syrah':	2,
+        'Gamay':	2,
+        'Duras N':	2,
+        'Sauvignon':	7,
+        'Sémilion':	7,
+        'Ugni blanc':	6,
+        'Gros Manseng B':	4,
+        'Mauzac B':	1,
+        'Len de l’El B':	1,
+        'Autres':	32},
         superficie: '59 400',
         nbr_prod: '19 730',
         prod_totale: '3 517 000',
@@ -265,6 +392,10 @@ class MapComponent extends React.Component {
         url: 'http://fr.wikipedia.org/wiki/Vignoble_de_Corse', 
         desc: CorseDesc,
         soleil: '2 741',
+        cepages_dict:{'Nielluccio':	34,
+        'Sciarcarello':	14,
+        'Grenache':	10,
+        'Autres':	41},
         pluie: '645',
         temp: '17,2',
         superficie: '5 800',
@@ -276,13 +407,48 @@ class MapComponent extends React.Component {
     }
   };
 
+  getArrays = (dict) => {
+    let returnedArray = []
+    for (let [key, value] of Object.entries(dict)) {
+      let array = new Array(value)
+      for(var i = 0; i < array.length; i++){
+        array[i]=key
+      }
+      returnedArray.push(array)
+    }
+    return returnedArray
+  }
+
+  getRandomColor = (i) => {
+    var colorArray = ['rgb(88, 24, 69)', 
+    'rgb(144, 12, 63)',
+    'rgb(199, 0, 57)',
+    'rgb(255, 87, 51)', 
+    'rgb(148, 49, 38)',
+    'rgb(169, 50, 38)',
+    'rgb(255, 195, 0)',
+    'rgb(192, 57, 43)',
+    'rgb(214, 137, 16)',
+    'rgb(241, 196, 15)',
+    'rgb(211, 84, 0)',
+    'rgb(235, 152, 78)',
+    'rgb(229, 152, 102)',
+    'rgb(183, 149, 11)',
+    'rgb(247, 220, 111)',
+    'rgb(240, 178, 122)',
+    'rgb(52, 73, 94)'];
+      
+    return colorArray[i];
+  }
+
   render() {
     return (
       <div className='Map' style={{display: 'flex', marginTop: 50,}}>
 
-        <div id='test' style={{width: '50%'}}>
+        <div id='test'style={{width: '50%'}}>
         <MapFrance
           hovered={this.state.hovered}
+          dark={this.props.dark}
           selected={this.state.selected}
           handleHovered={this.handleHovered}
           handleUnHovered={this.handleUnHovered}
@@ -290,18 +456,11 @@ class MapComponent extends React.Component {
         />
         </div>
         <div style={{width: '50%'}}>
-        {!this.state.selected && <div style={{
-                display: 'flex',
-                flexDirection: 'column',
-                textAlign: 'center',
-                position: 'absolute',
-                width: 550,
-                height: 250
-              }}>Aucun vignole selectionné</div>}
         {this.state.selected && <div>
             <Card
               elevation={2}
               style={{
+                backgroundColor : this.props.dark && secondary.appbar,
                 display: 'flex',
                 flexDirection: 'column',
                 textAlign: 'center',
@@ -311,22 +470,22 @@ class MapComponent extends React.Component {
               }}>
               <br />
               <div style={{ display: 'flex', justifyContent: 'center' }}>
-                <Typography style={{fontFamily: 'Montserrat'}} variant='h5'><b>{this.state.selected && this.regionMapper(this.state.selected).label}</b></Typography>
+                <Typography style={{fontFamily: 'Montserrat', color : this.props.dark && secondary.buttons}} variant='h5'><b>{this.state.selected && this.regionMapper(this.state.selected).label}</b></Typography>
 
                 <Tooltip placement='right' title='Page Wikipédia'>
                   <IconButton
                     size='small'
                     style={{marginLeft: 10}}
                     onClick={() => window.open(this.regionMapper(this.state.selected).url, '_blank')}>
-                    <LaunchIcon fontSize='small' />
+                    <LaunchIcon fontSize='small' style={{color : this.props.dark && secondary.buttons}} />
                   </IconButton>
                 </Tooltip>
               </div>
               <br />
-              <Divider variant='middle' />
+              <Divider variant='middle' style={{background : this.props.dark && secondary.buttons}}/>
 
               <div style={{ textAlign: 'justify', margin: 10, flex: 1, overflowY: 'auto' }}>
-                <Typography style={{fontFamily: 'Montserrat'}}>{this.state.selected && this.regionMapper(this.state.selected).desc}</Typography>
+                <Typography style={{fontFamily: 'Montserrat', color : this.props.dark && secondary.buttons}}>{this.state.selected && this.regionMapper(this.state.selected).desc}</Typography>
               </div>
             </Card>
 
@@ -337,40 +496,41 @@ class MapComponent extends React.Component {
               style={{
                 textAlign: 'center',
                 marginTop: 20,
+                background : this.props.dark && secondary.appbar,
                 width: 265,
                 maxHeight: 300
               }}>
 
                 
-                <Typography style={{ margin : 10, fontSize: 20, fontFamily: 'Montserrat'}}>
+                <Typography style={{ margin : 10, fontSize: 20, fontFamily: 'Montserrat', color : this.props.dark && secondary.buttons}}>
                 Climat
                 </Typography>
 
-                <Divider variant="middle"/>
+                <Divider variant="middle" style={{background : this.props.dark && secondary.buttons}}/>
 
                 <div style={{display: 'flex', margin: 10, justifyContent: 'center' }}>
                 <Tooltip placement='left' title="Temps d'ensoleillement">
-                <SunIcon/>
+                <SunIcon style={{color : this.props.dark && secondary.buttons}}/>
                 </Tooltip>
-                <Typography style={{marginLeft: 10, fontFamily: 'Montserrat' }}>
+                <Typography style={{marginLeft: 10, fontFamily: 'Montserrat', color : this.props.dark && secondary.buttons }}>
                 {this.state.selected && this.regionMapper(this.state.selected).soleil}  h/an
                 </Typography>
                 </div>
 
                 <div style={{display: 'flex', margin: 10, justifyContent: 'center'}}>
                 <Tooltip placement='left' title="Pluviométrie">
-                <RainIcon/>
+                <RainIcon style={{color : this.props.dark && secondary.buttons}}/>
                 </Tooltip>
-                <Typography style={{marginLeft: 10, fontFamily: 'Montserrat' }}>
+                <Typography style={{marginLeft: 10, fontFamily: 'Montserrat', color : this.props.dark && secondary.buttons }}>
                 {this.state.selected && this.regionMapper(this.state.selected).pluie} mm/an
                 </Typography>
                 </div>
 
                 <div style={{display: 'flex', margin: 10, justifyContent: 'center'}}>
                 <Tooltip placement='left' title="Température moyenne">
-                <TempIcon/>
+                <TempIcon style={{color : this.props.dark && secondary.buttons}}/>
                 </Tooltip>
-                <Typography style={{marginLeft: 10, fontFamily: 'Montserrat' }}>
+                <Typography style={{marginLeft: 10, fontFamily: 'Montserrat', color : this.props.dark && secondary.buttons}}>
                 {this.state.selected && this.regionMapper(this.state.selected).temp} °C
                 </Typography>
                 </div>
@@ -382,40 +542,41 @@ class MapComponent extends React.Component {
               style={{
                 textAlign: 'center',
                 width: 265,
+                background : this.props.dark && secondary.appbar,
                 marginTop: 20,
                 marginLeft: 20,
                 maxHeight: 300
               }}>
 
-                <Typography style={{ margin : 10, fontSize: 20, fontFamily: 'Montserrat'}}>
+                <Typography style={{ margin : 10, fontSize: 20, fontFamily: 'Montserrat', color : this.props.dark && secondary.buttons}}>
                 Production
                 </Typography>
 
-                <Divider variant="middle"/>
+                <Divider variant="middle" style={{background : this.props.dark && secondary.buttons}}/>
 
                 <div style={{display: 'flex', margin: 10, justifyContent: 'center' }}>
                 <Tooltip placement='left' title="Superficie">
-                <SuperficieIcon/>
+                <SuperficieIcon style={{color : this.props.dark && secondary.buttons}}/>
                 </Tooltip>
-                <Typography style={{marginLeft: 10, fontFamily: 'Montserrat' }}>
+                <Typography style={{marginLeft: 10, fontFamily: 'Montserrat', color : this.props.dark && secondary.buttons }}>
                 {this.state.selected && this.regionMapper(this.state.selected).superficie} ha
                 </Typography>
                 </div>
 
                 <div style={{display: 'flex', margin: 10, justifyContent: 'center'}}>
                 <Tooltip placement='left' title="Nombre de producteurs">
-                <PeopleIcon/>
+                <PeopleIcon style={{color : this.props.dark && secondary.buttons}}/>
                 </Tooltip>
-                <Typography style={{marginLeft: 10, fontFamily: 'Montserrat' }}>
+                <Typography style={{marginLeft: 10, fontFamily: 'Montserrat', color : this.props.dark && secondary.buttons }}>
                 {this.state.selected && this.regionMapper(this.state.selected).nbr_prod}
                 </Typography>
                 </div>
 
                 <div style={{display: 'flex', margin: 10, justifyContent: 'center'}}>
                 <Tooltip placement='left' title="Production annuelle">
-                <OpacityIcon/>
+                <OpacityIcon style={{color : this.props.dark && secondary.buttons}}/>
                 </Tooltip>
-                <Typography style={{marginLeft: 10, fontFamily: 'Montserrat' }}>
+                <Typography style={{marginLeft: 10, fontFamily: 'Montserrat', color : this.props.dark && secondary.buttons }}>
                 {this.state.selected && this.regionMapper(this.state.selected).prod_totale} hl
                 </Typography>
                 </div>
@@ -426,33 +587,42 @@ class MapComponent extends React.Component {
 
               </div>
 
-              <Card
+
+            <Card
               elevation={2}
               style={{
-                display: 'flex',
-                flexDirection: 'column',
-                textAlign: 'justify',
+                textAlign: 'center',
                 marginTop: 20,
+                background : this.props.dark && secondary.appbar,
                 width: 550,
-                height: 180
+                height: 185
               }}>
-                <Typography style={{ margin : 10, fontSize: 20, fontFamily: 'Montserrat' }}>
+
+                
+                <Typography style={{ margin : 5, fontSize: 20, fontFamily: 'Montserrat', color : this.props.dark && secondary.buttons}}>
                 Cépages
                 </Typography>
 
-                <Divider variant="middle"/> 
+                <Divider variant="middle" style={{background : this.props.dark && secondary.buttons}}/>
+              <div style={{margin: 8}}>
 
-                <div style={{flex: 1,overflowY: 'auto',}}>
-                <Typography style={{marginRight : 10,  marginLeft : 10, fontSize: 12, marginTop: 10, fontFamily: 'Montserrat' }}>
-                <b>Cépages rouges</b> : {this.state.selected && this.regionMapper(this.state.selected).rouges}
-                </Typography>
-
-                <Typography style={{ marginRight: 10, marginLeft : 10, fontSize: 12, fontFamily: 'Montserrat' }}>
-              <b>Cépages blancs</b>  : {this.state.selected && this.regionMapper(this.state.selected).blancs}
-                </Typography>
-                </div>
-
+              {this.getArrays(this.regionMapper(this.state.selected).cepages_dict).map((item, idx) => { 
+                let color = this.getRandomColor(idx)
+                return (
+                item.map( i => {
+                  return <Tooltip placement='top' title={i + ' - ' + item.length.toString()+ ' %'}>
+                  {/* <img src={"https://www.svgrepo.com/show/102738/grapes-with-leaf-and-stem.svg"} style={{width: 23, height: 23, fill:{color}}}/> */}
+                  {View(color)}
+                </Tooltip>
+                })
+              )
+                }
+                )
+              }
+              </div>
               </Card>
+
+              
 
               </div>}
               </div>

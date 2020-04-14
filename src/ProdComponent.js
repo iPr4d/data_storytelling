@@ -7,17 +7,24 @@ import Paper from '@material-ui/core/Paper'
 import Chip from '@material-ui/core/Chip'
 import Fade from '@material-ui/core/Fade'
 
-import SvgFranceDepartmentsHigh from './SvgFrance'
 import DatavizDep from './DatavizDep'
 import DatavizDep2 from './DatavizDep2'
 import DatavizMultiDep from './DatavizMultiDep'
 import SearchField from './SearchField'
 
-var ResponsiveDialog = withMobileDialog()(Dialog);
+const secondary = { main: "#202020", appbar: '#333333', buttons: '#FFFFFF'};
 
 const styles = (theme) => ({
   root: {
     display: 'flex',
+    justifyContent: 'center',
+    flexWrap: 'wrap',
+    padding: theme.spacing(0.5),
+    maxWidth: 800
+  },
+  rootDark: {
+    display: 'flex',
+    background: secondary.appbar,
     justifyContent: 'center',
     flexWrap: 'wrap',
     padding: theme.spacing(0.5),
@@ -66,8 +73,8 @@ render() {
 
         
     <div style={{display:'flex', justifyContent: 'center', marginLeft: 100}}>
-        <Paper className={classes.root}>
-          <Typography style={{fontFamily: 'Montserrat', marginRight: 5, marginTop: 8, marginLeft: 5}}>Sélection :</Typography>
+        <Paper className={this.props.dark ? classes.rootDark : classes.root}>
+          <Typography style={{fontFamily: 'Montserrat', marginRight: 5, marginTop: 8, marginLeft: 5, color: this.props.dark && secondary.buttons}}>Sélection :</Typography>
       {this.state.selected.map(data => {
         let icon;
 
@@ -83,22 +90,22 @@ render() {
       })}
     </Paper>
 
-    <SearchField handleClickItem={this.handleClickItem}/>
+    <SearchField handleClickItem={this.handleClickItem} dark={this.props.dark}/>
     </div>
 
       {this.state.selected.length === 1 && 
         <div style={{display:'flex'}}>
           <div>
-        <DatavizDep selected={this.state.selected[0].key}/>
+        <DatavizDep selected={this.state.selected[0].key} dark={this.props.dark}/>
           </div>
           <div>
-        <DatavizDep2 selected={this.state.selected}/>
+        <DatavizDep2 selected={this.state.selected} dark={this.props.dark}/>
           </div>
         </div>
         }
         
 
-        {this.state.selected.length > 1 && <DatavizMultiDep selected={this.state.selected}/>}
+        {this.state.selected.length > 1 && <DatavizMultiDep selected={this.state.selected} dark={this.props.dark}/>}
 
 
 

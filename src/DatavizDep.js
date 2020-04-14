@@ -57,7 +57,7 @@ render() {
             <br/>
 
             
-            <Stream data={data_selected}/>
+            <Stream data={data_selected} dark={this.props.dark}/>
             
 
 
